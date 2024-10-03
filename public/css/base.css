@@ -55,3 +55,8 @@
 #menu.open::before {
 	content: "X";
 }
+
+#computingLogo {
+	width: 50%;
+	margin: 50px;
+}
