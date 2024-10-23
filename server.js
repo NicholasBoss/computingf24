@@ -14,6 +14,7 @@ const utilities = require("./utilities/")
 const session = require("express-session")
 const pool = require("./database/")
 const generalRoute = require("./routes/generalRoute")
+const teamsRoute = require("./routes/teamsRoute")
 // const contactRoute = require("./routes/messageRoute")
 // const accountRoute = require("./routes/accountRoute")
 // const menuRoute = require("./routes/menuRoute")
@@ -76,6 +77,8 @@ app.get("/", generalRoute)
 
 // // Menu Route
 // app.use("/menu", menuRoute)
+
+app.use("/teams", require("./routes/teamsRoute"))
 
 // File Not Found Route - must be last route in list
 app.use(async (req, res, next) => {
