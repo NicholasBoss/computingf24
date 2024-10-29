@@ -1,8 +1,59 @@
 :root{
     /* Site Colors */
-    --primary-color: ;
-    --secondary-color: ;
+    --primary-color: #5ab0e2;
+    --secondary-color: #33A6EA;
+	--accent1-color: #FF3130;
     --ham-color: var(--secondary-color);
+	--border-color: var(--accent1-color);
+
+	--nav-background-color: var(--secondary-color);
+    --nav-transparent-background-color: rgb(91, 194, 231, 0.8);
+    --nav-link-color: var(--accent3-color);
+    --nav-hover-background-color: var(--primary-color);
+}
+
+#main-header {
+    display: grid;
+	grid-template-columns: 125px 1fr;
+	/* justify-items: center; */
+    align-items: center;
+    max-width: 100%;
+    font-size: 0;
+    /* padding: 2%; */
+}
+
+.logo {
+    width: 75%;
+    border-radius: 50%;
+}
+
+#tools {
+    /* background-color: var(--nav-background-color); */
+    background-color: var(--nav-transparent-background-color);
+    color: var(--accent3-color);
+    grid-column: 2/3;
+    grid-row: 1/2;
+    justify-self: center;
+    border-radius: 5px;
+    font-size: initial;
+}
+#tools a {
+    border-radius: 5px;
+    padding: 2%;
+    text-decoration: none;
+    color: var(--accent3-color);
+}
+#tools a:hover {
+    background-color: var(--nav-hover-background-color);
+    font-weight: 500;
+}
+
+#loggedin, #loggedout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
 }
 
 #menu {
@@ -61,3 +112,63 @@
 	margin: 50px;
 }
 
+form {
+    border: 3px solid var(--border-color);
+    border-radius: 5px;
+    margin: 0 auto;
+    max-width: 900px;
+}
+
+#dt {
+    margin: 2% auto;
+}
+
+input[type=email], input[type=password], input[type=text], input[type=tel], input[type=date], input[type=time], textarea {
+    width: 80%;
+    padding: 12px 20px;
+    margin: 2% auto;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+input[type=number] {
+    width: 66%;
+    margin: auto 2%;
+    padding: 2%;
+}
+
+.formbtn {
+    display: block;
+    background-color: var(--secondary-color);
+    color: var(--accent3-color);
+    padding: 1rem;
+    margin: 8px auto;
+    cursor: pointer;
+}
+
+.container {
+	padding: 16px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.container label b {
+	margin-right: 60%;
+}
+
+#rushCheck {
+    margin-right: unset;
+}
+
+.container button {
+	text-align: center;
+}
+
+input:focus:invalid {
+    background-color: lightcoral;
+}
+
+input:focus:valid {
+    background-color: lightgreen;
+}

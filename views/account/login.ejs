@@ -1,0 +1,37 @@
+<% if (title) { %>
+    <h1>
+        <%= title %>
+    </h1>
+    <% } else { res.redirect('/') } %>
+
+        <%- messages() %>
+        <% if (errors) { %>
+            <ul id="errorList" class="notice error">
+                <% errors.array().forEach(error=> { %>
+                    <li>
+                        <%= error.msg %>
+                    </li>
+                    <% }) %>
+            </ul>
+            <% } %> 
+                <script src="/js/togglePass.js" defer></script>
+                <form action="/account/login" method="post">
+                    <div class="container">
+                        <label><b>Email:</b>
+                        <input type="email" id="email" name="account_email" required 
+                            placeholder="Enter Email"
+                            value="<%= locals.account_email %>"></label><br>
+                        <label><b>Password:</b>
+                        <input type="password" id="password" name="account_password" required 
+                            placeholder="Enter Password"
+                            value="<%= locals.account_password %>">
+                            <i class="eye-toggle" id="togglePass"><img id="passImg" src="/images/icons/eye-regular.svg" alt="Password Eye"></i></label><br>
+                        <!-- SET URL that prompted login -->
+                        <% if (url) { %> 
+                            <input type="hidden" name="url" value="<%= url %>">
+                            <% } else { %>
+                                <input type="hidden" name="url" value="/account/login">
+                                <% } %>
+                                    <button class="formbtn" type="submit">Login</button>
+                    </div>
+                </form>
