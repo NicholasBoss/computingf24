@@ -32,5 +32,8 @@ router.post("/login",
 // Logout Route
 router.get('/logout', accountController.accountLogout)
 
+// Update Account Route
+router.post('/update', util.checkLogin, util.handleErrors(accountController.updateAccount))
+
 // Export
 module.exports = router

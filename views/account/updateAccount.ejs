@@ -1,0 +1,54 @@
+<% if (title) { %>
+    <h1>
+        <%= title %>
+    </h1>
+    <% } else { res.redirect('/') } %>
+
+        <%- messages() %>
+            <% if (errors) { %>
+                <ul class="notice">
+                    <% errors.array().forEach(error=> { %>
+                        <li>
+                            <%= error.msg %>
+                        </li>
+                        <% }) %>
+                </ul>
+                <% } %>
+                <script src="/js/accUpdate.js" defer></script>
+                <script src="/js/passUpdate.js" defer></script>
+                <script src="/js/togglePass.js" defer></script>
+                <form action="/account/updateAccount" id="account-update-form" method="post">
+                    <div class="container">
+                        <label><b>First Name*</b> <input type="text" id="first_name" name="account_firstname" required
+                                placeholder="Enter First Name" value="<%= locals.account_firstname %>">
+                        </label><br>
+                        <label><b>Last Name*</b> <input type="text" id="last_name" name="account_lastname" required
+                                placeholder="Enter Last Name" value="<%= locals.account_lastname %>"></label>
+                        <label><b>Email*</b> <input type="email" id="email" name="account_email" required
+                                placeholder="Enter a valid email address" value="<%= locals.account_email %>"></label><br>
+                        <input type="hidden" name="account_id" value="<%=locals.account_id%>">
+                        <button disabled class="formbtn" id="upAcc" type="submit">Update Account</button>
+                    </div>
+                </form>
+                <h2>Update Password</h2>
+                
+                <form action="/account/update-password" id="account-update-password-form" method="post">
+                    <div class="container">
+                        <label><b>New Password*:</b>
+                            <input type="password" id="password" name="account_password" required
+                                placeholder="Enter a valid password"
+                                title="Password must contain at least one number, one uppercase letter, one lowercase letter, one special character, and at least 8 or more characters"
+                                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$">
+                                <i class="eye-toggle" id="togglePass"><img id="passImg" src="/images/site/eye-regular.svg" alt="Password Eye"></i></label><br>
+                                <input type="hidden" name="account_id" value="<%= locals.account_id%>">
+                                <p>Password Must contain:</p>
+                                <ul>
+                                    <li>At least one number.</li>
+                                    <li>At least one lowercase letter.</li>
+                                    <li>At least one uppercase letter.</li>
+                                    <li>At least one special character</li>
+                                    <li>At least 8 characters long.</li>
+                                </ul>
+                        <button disabled class="formbtn" id="upPass" type="submit">Update Password</button>
+                    </div>
+                </form>
