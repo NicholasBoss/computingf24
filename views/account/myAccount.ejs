@@ -1,0 +1,25 @@
+<h2>Hello <%= locals.accountData.account_firstname %> <%= locals.accountData.account_lastname %></h2>
+<%- messages()  %>
+<% if (errors) { %>
+    <ul id="errorList" class="notice error">
+        <% errors.array().forEach(error=> { %>
+            <li>
+                <%= error.msg %>
+            </li>
+            <% }) %>
+    </ul>
+    <% } %>
+<div class="container">
+    <h2>Account Information:</h2>
+    
+    <!-- Display current account information -->
+    <div id="account-info">
+        <p><strong>Name:</strong> <span id="display-name"><%= locals.accountData.account_firstname%> <%= locals.accountData.account_lastname%></span></p>
+        <p><strong>Email:</strong> <span id="display-email"><%= locals.accountData.account_email%></span></p>
+    </div>
+
+    <!-- Update Account Information -->
+    <h2>Update Account Information:</h2>
+    <div class="formbtn">
+        <a href="/account/updateAccount" class="formbtn">Update Account</a>
+    </div>

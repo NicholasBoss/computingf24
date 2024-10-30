@@ -1,0 +1,24 @@
+<header id="main-header">
+    <a class="logolink" href="/" title="Return to Home Page">
+        <img class="logo" src="/images/computingsocietylogo.png" alt="Computing Society Logo">
+    </a>
+    <div id="tools">
+        <% section = ''; if (section != '') {section = ''} %>
+        <% if (locals.accountData) { %>
+            <div id="loggedin">
+                <!-- Display First name with a link to the account management view -->
+                <% if (section == 'account') { %>
+                    <a class="active account" href="/account" title="Click to manage your account">Hello <%= locals.accountData.account_firstname %></a>
+                <% } else { %>
+                    <a class="account" href="/account" title="Click to manage your account">Hello <%= locals.accountData.account_firstname %></a>
+                <% } %>
+                <a class="logout" href="/account/logout" title="Click to log out">Log Out</a>
+            </div>
+        <% } else { %>
+            <div id="loggedout">
+                <a class="login" href="/account/login" title="Click to log in">Log In</a>
+                <a class="register" href="/account/register" title="Click to register">Register</a>
+            </div>
+        <% } %>
+    </div>
+</header>
