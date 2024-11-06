@@ -12,6 +12,12 @@
     --nav-hover-background-color: var(--primary-color);
 }
 
+h1 {
+    color: #323146;
+    text-align: center;
+    font-size: 100px;
+}
+
 #main-header {
     display: grid;
 	grid-template-columns: 125px 1fr;
