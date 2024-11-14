@@ -33,6 +33,8 @@ router.post("/login",
 router.get('/logout', accountController.accountLogout)
 
 // Update Account Route
+router.get('/update', util.checkLogin, util.handleErrors(accountController.buildUpdateAccount))
+
 router.post('/update', util.checkLogin, util.handleErrors(accountController.updateAccount))
 
 // Export

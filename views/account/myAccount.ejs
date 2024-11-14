@@ -23,3 +23,11 @@
     <div class="formbtn">
         <a href="/account/updateAccount" class="formbtn">Update Account</a>
     </div>
+
+    <!-- add a admin only section (checks for DBA and Admin role) -->
+    <% if (locals.accountData.account_type === 'DBA' || locals.accountData.account_type === 'Admin') { %>
+        <h2>Admin Section:</h2>
+        <div class="formbtn">
+            <a href="/admin" class="formbtn">Admin Section</a>
+        </div>
+    <% } %>
