@@ -30,7 +30,6 @@ teamController.buildSWE = async function(req, res){
     res.render('teams/swe', {
         title: 'Society of Women Engineers', 
         link: 'teams/swe', 
-        //maybe where ejs stuff is supposed to go as well??
     })
 }
 

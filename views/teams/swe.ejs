@@ -1,11 +1,34 @@
-<!--Currently assisting with development of this page- MADDIE SMITH :)-->
-<body class="swe-body">
-    <h1 id="swe-title"><%= title %></h1>
-    <h2 id="swe-subtitle">Aspire ~ Advance ~ Achieve</h2>
-    <div class="swe-textBox" style="width:1100px;height:220px;top:400px;left:350px;"></div>
-    <img src="/images/swe.jpg" alt="Placeholder picture of SWE sign" style="width:300px;margin-right:75px;" class="swe-image">
-    <p class="swe-para">This is some text that will talk about the Society of Women Engineers or SWE! 
-        For now it will just be a bunch of words while I figure out how to use HTML and wait to meet with
-        some SWE people and figure out what it is that they actually do haha
+<!--Currently assisting with development of this page- MADDIE SMITH :) -->
+<script src="/js/swe.js" defer></script>
+<h1 id="swe-title"><%= title %></h1>
+<h2 id="swe-subtitle">Aspire ~ Advance ~ Achieve</h2>
+<div class="swe-textBox" style="width:1100px;height:220px;top:400px;left:350px;"></div>
+<img src="/images/swe.jpg" alt="Placeholder picture of SWE sign" style="width:300px;margin-right:75px;" class="swe-image">
+<p class="swe-para">This is some text that will talk about the Society of Women Engineers (or SWE)! 
+    For now it will just be a bunch of words while I figure out how to use HTML and wait to meet with
+    some SWE people and figure out what it is that they actually do haha
+</p>
+
+<!-- Tab links -->
+<div class="tab" style="top:800px;left:100px">
+    <button class="tab-button" onclick="openTab(event, 'AboutUs')">About Us</button>
+    <button class="tab-button" onclick="openTab(event, 'SuccessStories')">Success Stories</button>
+    <button class="tab-button" onclick="openTab(event, 'PastProjects')">Past Projects</button>
+</div>
+
+<!-- Tab contents -->
+<div id="AboutUs" class="tab-content">
+    <h3>About Us</h3>
+    <p class="swe-para">We like to party. That's all you need to know</p>
+</div>
+<div id="SuccessStories" class="tab-content">
+    <h3>Success Stories</h3>
+    <p class="swe-para">"I've been with SWE for the last three years and it has taught me 
+        everything I need to know about life! You should totally join!" -Patricia
     </p>
-</body>
+</div>
+<div id="PastProjects" class="tab-content">
+    <h3>Past Projects</h3>
+    <p class="swe-para">We shot a bird one time. You feel like that's not related? I don't know.</p>
+</div>
+
